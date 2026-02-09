@@ -1,12 +1,11 @@
+import { MergeAttributes } from "@/libs/CustomAttribute";
 import styles from "./index.module.css";
 
-type Props = {
-    children?: React.ReactNode;
-    customAttributes?: React.HTMLAttributes<HTMLDivElement>;
-}
-export function FillScreen({ children, customAttributes }: Props) {
+
+export function UI_Screen_Fill(props: React.HTMLAttributes<HTMLDivElement>) {
+    const { children, ...parentProps } = props;
     return (
-        <div className={styles.fillScreen} {...customAttributes}>
+        <div {...MergeAttributes(parentProps, {className: styles.fillScreen})}>
             <div className={styles.content}>
                 {children}
             </div>
