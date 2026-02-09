@@ -1,11 +1,11 @@
 "use client";
 
 
-import { ButtonStyles, PlainButton } from "@/page_components/form/button";
 import { useEffect, useState } from "react";
 
 import styles from "./index.module.css";
 import { MergeAttributes, MergeClassNames } from "@/libs/CustomAttribute";
+import { UI_Button } from "@/page_components/form/button/button";
 
 type Options = React.HTMLAttributes<HTMLDivElement> & {
     custom: {
@@ -20,7 +20,6 @@ type Options = React.HTMLAttributes<HTMLDivElement> & {
     }
 };
 
-const buttonStyles = MergeClassNames(ButtonStyles.HoverScale, ButtonStyles.Transition);
 
 export function Timer(options: Options) {
     const { custom, ...props } = options;
@@ -57,7 +56,7 @@ export function Timer(options: Options) {
         
 
         <div className={styles.controllContainer}>
-            <PlainButton className={buttonStyles} onClick={() => {
+            <UI_Button onClick={() => {
                 if (running) {
                     setRunning(false);
                     setResultTime(current);
@@ -74,17 +73,17 @@ export function Timer(options: Options) {
                 {
                     running ? "⏹" : "▶"
                 }
-            </PlainButton>
+            </UI_Button>
             
             {
                 custom.allowLap &&
-                <PlainButton className={buttonStyles} onClick={() => {
+                <UI_Button  onClick={() => {
                     if (running) {
                         custom.onLap?.(current);
                     }
                 }} disabled={!running} title="ラップタイム取得">
                     ⏱
-                </PlainButton>
+                </UI_Button>
             }
         </div>
     </div>;

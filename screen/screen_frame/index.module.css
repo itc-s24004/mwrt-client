@@ -1,0 +1,30 @@
+.screen_frame {
+    display: flex;
+    flex-direction: column;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: #e5e5e5;
+    overflow: hidden;
+}
+
+
+.top {
+    height: 50px;
+    overflow: hidden;
+}
+
+
+.center {
+    flex: 1;
+
+    overflow: hidden;
+}
+
+.bottom {
+    height: 150px;
+    background-color: #696969;
+
+    overflow: hidden;
+}
