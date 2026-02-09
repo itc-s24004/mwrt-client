@@ -1,11 +1,8 @@
-import { Content } from "./content";
+import { Screen } from "./_screen/screen";
 
 export default function Home() {
 
-
-
-
     return (
-        <Content/>
+        <Screen/>
     );
 }

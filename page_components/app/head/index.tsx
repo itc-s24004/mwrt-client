@@ -3,7 +3,7 @@ import { MergeAttributes, MergeClassNames } from "@/libs/CustomAttribute";
 
 
 import styles from "./index.module.css";
-import { PlainButton } from "@/page_components/form/button";
+import { UI_Button } from "@/page_components/form/button/button";
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
     media: MediaType;
@@ -19,9 +19,9 @@ export function AppHead({ media, back, children, ...props }: Props) {
             })
         })}>
             {
-                back && <PlainButton onClick={back}>
+                back && <UI_Button size="small" onClick={back}>
                     戻る
-                </PlainButton>
+                </UI_Button>
             }
             <div className={styles.content}>
                 {children}
